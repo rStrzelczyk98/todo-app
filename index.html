@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="color-scheme" content="light dark" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="32x32"
+      href="./icons/favicon-32x32.png"
+    />
+    <link rel="stylesheet" href="CSS/style.css" />
+    <script defer src="script.js"></script>
+    <title>Frontend Mentor | Todo app</title>
+  </head>
+  <body>
+    <header class="main-header">
+      <div class="title">
+        <h1>Todo</h1>
+        <button class="toggle" aria-label="Theme toggle button"></button>
+      </div>
+      <div class="input-field">
+        <label for="new-task"></label>
+        <input
+          type="text"
+          name="new-task"
+          id="new-task"
+          placeholder="Create a new todo..."
+        />
+      </div>
+    </header>
+    <main class="task-container">
+      <figure class="card hidden">
+        <div class="task-list"></div>
+        <div class="task-info">
+          <p id="items">0 item left</p>
+          <div class="filter">
+            <button class="btn-filter btn-all">All</button>
+            <button class="btn-filter btn-active">Active</button>
+            <button class="btn-filter btn-completed">Completed</button>
+          </div>
+          <button class="btn-clear">Clear Completed</button>
+        </div>
+      </figure>
+    </main>
+
+    <footer class="attribution">
+      <p>
+        Challenge by
+        <a href="https://www.frontendmentor.io?ref=challenge" target="_blank"
+          >Frontend Mentor</a
+        >. Coded by
+        <a href="https://github.com/rStrzelczyk98" target="_blank"
+          >Robert Strzelczyk</a
+        >.
+      </p>
+    </footer>
+  </body>
+</html>
