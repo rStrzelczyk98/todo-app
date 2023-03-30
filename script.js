@@ -42,18 +42,22 @@ document.addEventListener("keydown", function (e) {
 });
 
 document.addEventListener("click", function (e) {
-  if (e.target.closest(".checkbox")) {
-    const target = e.target.closest("label");
-    const checkbox = target.parentElement.children[0].checked;
-    const taskStatus = target.parentElement.children[2].classList;
-    if (!checkbox && taskStatus.contains("active")) {
+  if (e.target.closest(".checkbox") || e.target.closest(".task-description")) {
+    const checkbox = e.target.parentElement.children[0];
+    const label = e.target.parentElement.children[1];
+    const taskStatus = e.target.parentElement.children[2].classList;
+    if (!checkbox.checked && taskStatus.contains("active")) {
+      if (e.target === e.target.closest(".task-description"))
+        checkbox.checked = true;
       taskStatus.remove("active");
       taskStatus.add("completed");
-      updateStatus.call(target, "completed");
-    } else if (checkbox && taskStatus.contains("completed")) {
+      updateStatus.call(label, "completed");
+    } else if (checkbox.checked && taskStatus.contains("completed")) {
+      if (e.target === e.target.closest(".task-description"))
+        checkbox.checked = false;
       taskStatus.remove("completed");
       taskStatus.add("active");
-      updateStatus.call(target, "active");
+      updateStatus.call(label, "active");
     }
   } else if (e.target.closest(".btn-clear")) {
     [...list.children].forEach((el) => {

@@ -38,7 +38,11 @@ body {
 button {
   color: var(--theme-1-DarkGrayishBlue);
 }
-button:is(:hover, :focus) {
+button:hover {
+  cursor: pointer;
+  color: var(--theme-1-VeryDarkGrayishBlue);
+}
+button:focus {
   cursor: pointer;
   color: var(--brightBlue);
 }
@@ -129,6 +133,9 @@ button:is(:hover, :focus) {
   font-size: 0.75rem;
   overflow: hidden;
 }
+.task-description:hover {
+  cursor: pointer;
+}
 .task-description.completed {
   color: var(--theme-1-VeryLightGrayishBlue);
   text-decoration: line-through;
@@ -204,6 +211,7 @@ input[type="checkbox"]:checked + label.checkbox {
 .task-info p,
 .btn-clear,
 .btn-filter {
+  color: var(--theme-1-DarkGrayishBlue);
   font-size: 0.75rem;
   font-weight: 700;
   outline: transparent;
@@ -212,7 +220,7 @@ input[type="checkbox"]:checked + label.checkbox {
 }
 .task-info p,
 .btn-clear {
-  color: var(--theme-1-LightGrayishBlue);
+  font-weight: 500;
 }
 
 .filter {
@@ -227,9 +235,6 @@ input[type="checkbox"]:checked + label.checkbox {
   border-radius: 0.375rem;
   padding: 1rem;
   transition: transform 250ms ease-in-out;
-}
-.btn-filter {
-  font-size: 1rem;
 }
 
 /* footer */
@@ -263,7 +268,11 @@ input[type="checkbox"]:checked + label.checkbox {
 .dark button {
   color: var(--theme-2-DarkGrayishBlue);
 }
-.dark button:is(:hover, :focus) {
+.dark button:is(:hover) {
+  cursor: pointer;
+  color: var(--theme-2-LightGrayishBlueHover);
+}
+.dark button:is(:focus) {
   cursor: pointer;
   color: var(--brightBlue);
 }
@@ -308,8 +317,10 @@ input[type="checkbox"]:checked + label.checkbox {
   background-color: var(--theme-2-VeryDarkDesaturatedBlue);
 }
 .dark label.checkbox:is(:hover, :focus) {
+  cursor: pointer;
   background: var(--checkBackground);
 }
+
 .dark input[type="checkbox"]:checked + label.checkbox {
   background: url(../icons/icon-check.svg), var(--checkBackground);
   background-repeat: no-repeat;
@@ -325,8 +336,8 @@ input[type="checkbox"]:checked + label.checkbox {
 .dark .task-info {
   background-color: var(--theme-2-VeryDarkDesaturatedBlue);
 }
-.task-info p,
-.btn-clear {
+.dark .task-info p,
+.dark .btn-clear {
   color: var(--theme-2-DarkGrayishBlue);
 }
 .dark .filter {
@@ -336,12 +347,11 @@ input[type="checkbox"]:checked + label.checkbox {
   color: var(--theme-2-DarkGrayishBlue);
   background-color: var(--theme-2-VeryDarkBlue);
 }
-
 .hidden {
   display: none;
 }
 
-@media screen and (min-width: 376px) {
+@media screen and (min-width: 450px) {
   .main-header {
     min-height: 18.75rem;
     background-image: url(../images/bg-desktop-light.jpg);
