@@ -5,6 +5,8 @@ function app() {
   let taskCount = 0;
 
   window.addEventListener("load", function () {
+    if (matchMedia && matchMedia("(prefers-color-scheme:dark)").matches)
+      document.body.classList.add("dark");
     taskCount = Number(localStorage.getItem("counter"));
     for (const key in localStorage) {
       if (key.includes("task")) toDoList[key] = JSON.parse(localStorage[key]);
@@ -18,11 +20,7 @@ function app() {
     });
     itemsLeft();
     displayTaskList();
-    if (
-      this.matchMedia &&
-      this.matchMedia("(prefers-color-scheme:dark)").matches
-    )
-      document.body.classList.add("dark");
+    document.body.classList.remove("hidden");
   });
 
   document.addEventListener("keydown", function (e) {
