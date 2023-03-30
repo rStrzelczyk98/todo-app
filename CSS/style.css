@@ -222,6 +222,9 @@ input[type="checkbox"]:checked + label.checkbox {
 .btn-clear {
   font-weight: 500;
 }
+.task-info p {
+  min-width: 5rem;
+}
 
 .filter {
   background-color: var(--theme-1-VeryLightGray);
