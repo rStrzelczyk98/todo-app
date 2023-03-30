@@ -93,6 +93,10 @@ button:focus {
   border-radius: 2rem;
   flex-grow: 0;
 }
+.input-field label:hover {
+  cursor: pointer;
+  background: var(--checkBackground);
+}
 .input-field label::before {
   background-color: var(--theme-1-VeryLightGray);
   display: block;
@@ -299,6 +303,10 @@ input[type="checkbox"]:checked + label.checkbox {
 }
 .dark .input-field label {
   background: var(--theme-2-VeryDarkGrayishBlue);
+}
+.dark .input-field label:hover {
+  cursor: pointer;
+  background: var(--checkBackground);
 }
 .dark .input-field label::before {
   background-color: var(--theme-2-VeryDarkDesaturatedBlue);
