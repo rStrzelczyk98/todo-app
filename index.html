@@ -21,7 +21,7 @@
         <button class="toggle" aria-label="Theme toggle button"></button>
       </div>
       <div class="input-field">
-        <label for="new-task"></label>
+        <label for="new-task" aria-label="Create a new todo"></label>
         <input
           type="text"
           name="new-task"
@@ -36,15 +36,25 @@
         <div class="task-info">
           <p id="items">0 item left</p>
           <div class="filter">
-            <button class="btn-filter btn-all">All</button>
-            <button class="btn-filter btn-active">Active</button>
-            <button class="btn-filter btn-completed">Completed</button>
+            <button class="btn-filter btn-all" aria-label="filter all">
+              All
+            </button>
+            <button class="btn-filter btn-active" aria-label="filter active">
+              Active
+            </button>
+            <button
+              class="btn-filter btn-completed"
+              aria-label="filter complited"
+            >
+              Completed
+            </button>
           </div>
-          <button class="btn-clear">Clear Completed</button>
+          <button class="btn-clear" aria-label="delete all completed items">
+            Clear Completed
+          </button>
         </div>
       </figure>
     </main>
-
     <footer class="attribution">
       <p>
         Challenge by
